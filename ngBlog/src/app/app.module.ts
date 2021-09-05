@@ -16,6 +16,7 @@ import { SHARED_SERVICES } from './shared/services';
 import { AppComponent } from './app.component';
 import { routes } from './app.routing';
 import { API_BASE_URL } from './app.tokens';
+import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { API_BASE_URL } from './app.tokens';
     MatIconModule,
     MatSidenavModule,
     MatToolbarModule,
+    AmplifyAngularModule
 
     //SearchFormModule
   ],
@@ -42,6 +44,7 @@ import { API_BASE_URL } from './app.tokens';
     ...SHARED_SERVICES,
     { provide: API_BASE_URL, useValue: environment.apiBaseUrl },
     //{ provide: WS_URL, useValue: environment.wsUrl }
+    AmplifyService
   ]
 })
 export class AppModule {}
